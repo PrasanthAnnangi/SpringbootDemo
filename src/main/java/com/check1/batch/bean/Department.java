@@ -6,7 +6,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.NoArgsConstructor;
+
 @Entity
+@NoArgsConstructor
 public class Department {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,9 +31,6 @@ public class Department {
 		this.departmentCode = departmentCode;
 	}
 	
-	public Department() {
-		super();
-	}
 	public String getDepartmentName() {
 		return departmentName;
 	}

@@ -25,7 +25,15 @@ public class DepartmentController {
 	@GetMapping("/departments/")
 	public ArrayList<Department> addDepartment() {
 		Logger.info("adding department");
-		dept=new Department("CSE", "hfdkj", "aws");
+		//without builder pattern
+		//dept=new Department("CSE", "hfdkj", "aws");
+		//With Builder pattern
+		dept=Department.builder()
+			.departmentName("CSE")
+			.departmentAdress("hfdkj")
+			.departmentCode("aws")
+			.build();
+			
 		return dps.addepmt(dept);
 	}
 	
@@ -43,7 +51,14 @@ public class DepartmentController {
 	}
 	@GetMapping("/departments/update/{id}")
 	public Department getUpdateDepartmentbyid(@PathVariable("id") Long id) {
-		dept=new Department("ECE", "hfdkj", "aws");
+		//without builder pattern
+				//dept=new Department("ECE", "hfdkj", "aws");
+				//With Builder pattern
+				dept=Department.builder()
+					.departmentName("ECE")
+					.departmentAdress("hfdkj")
+					.departmentCode("aws")
+					.build();
 	return	dps.getUpdateDeptById(id,dept);
 		
 	}

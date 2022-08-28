@@ -6,10 +6,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Department {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,12 +28,12 @@ public class Department {
 	public Long getDepartment_id() {
 		return department_id;
 	}
-	public Department(String departmentName, String departmentAdress, String departmentCode) {
-		super();
-		this.departmentName = departmentName;
-		this.departmentAdress = departmentAdress;
-		this.departmentCode = departmentCode;
-	}
+	/*
+	 * public Department(String departmentName, String departmentAdress, String
+	 * departmentCode) { super(); this.departmentName = departmentName;
+	 * this.departmentAdress = departmentAdress; this.departmentCode =
+	 * departmentCode; }
+	 */
 	
 	public String getDepartmentName() {
 		return departmentName;
